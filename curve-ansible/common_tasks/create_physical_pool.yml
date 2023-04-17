@@ -17,4 +17,4 @@
 
 - name: create physical pool
   shell: >
-    curve-tool -op=create_physicalpool -cluster_map={{ topo_file_path }}
+    /root/curve/projects/tools/sbin/curvebs-tool -op=create_physicalpool -cluster_map={{ topo_file_path }}

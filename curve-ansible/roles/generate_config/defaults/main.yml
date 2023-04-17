@@ -135,13 +135,14 @@ chunkserver_copyset_scan_rpc_retry_interval_us: 100000
 chunkserver_copyset_enable_odsync_when_open_chunkfile: false
 chunkserver_copyset_synctimer_interval_ms: 30000
 chunkserver_copyset_check_syncing_interval_ms: 500
+chunkserver_copyset_sync_concurrency: 20
 chunkserver_clone_slice_size: 1048576
 chunkserver_clone_enable_paste: false
 chunkserver_clone_thread_num: 10
 chunkserver_clone_queue_depth: 6000
 chunkserver_client_config_path: /etc/curve/cs_client.conf
 chunkserver_s3_config_path: /etc/curve/cs_s3.conf
-chunkserver_fs_enable_renameat2: true
+chunkserver_fs_enable_renameat2: false
 chunkserver_metric_onoff: true
 chunkserver_storeng_sync_write: false
 chunkserver_wconcurrentapply_size: 10

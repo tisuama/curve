@@ -113,6 +113,10 @@ copyset.scan_rpc_retry_interval_us={{ chunkserver_copyset_scan_rpc_retry_interva
 copyset.enable_odsync_when_open_chunkfile={{ chunkserver_copyset_enable_odsync_when_open_chunkfile }}
 copyset.synctimer_interval_ms={{ chunkserver_copyset_synctimer_interval_ms }}
 copyset.check_syncing_interval_ms={{ chunkserver_copyset_check_syncing_interval_ms }}
+copyset.sync_concurrency=20
+copyset.sync_chunk_limits=2 * 1024 * 1024
+copyset.sync_threshold=65536
+copyset.sync_trigger_seconds=25
 
 #
 # Clone settings
@@ -199,6 +203,7 @@ chunkfilepool.clean.throttle_iops={{ chunkserver_chunkfilepool_clean_throttle_io
 #
 # walpool是否共用chunkfilepool，如果为true，则以下配置无效
 walfilepool.use_chunk_file_pool={{ walfilepool_use_chunk_file_pool }}
+walfilepool.use_chunk_file_pool_reserve=15
 # 是否开启从walfilepool获取chunk，一般是true
 walfilepool.enable_get_segment_from_pool={{ chunkserver_format_disk }}
 # walpool目录

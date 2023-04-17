@@ -17,4 +17,4 @@
 
 - name: create logical pool
   shell: >
-    curve-tool -op=create_logicalpool -cluster_map={{ topo_file_path }}
+    /root/curve/projects/tools/sbin/curvebs-tool -op=create_logicalpool -cluster_map={{ topo_file_path }}

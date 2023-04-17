@@ -133,7 +133,7 @@ function start_one() {
         return 1
     fi
 
-    ps -efl|grep -E "curve-chunkserver .*${dataDir}/chunkserver$1 "|grep -v grep
+    ps -efl|grep -E "curvebs-chunkserver .*${dataDir}/chunkserver$1 "|grep -v grep
     if [ $? -eq 0 ]
     then
         echo "chunkserver$1 is already active!"
@@ -154,7 +154,7 @@ function start_one() {
         echo "Not found jemalloc library, Path is ${jemallocpath}"
         exit 1
     fi
-    LD_PRELOAD=${jemallocpath} curve-chunkserver \
+    LD_PRELOAD=${jemallocpath} /root/curve/projects/chunkserver/sbin/curvebs-chunkserver \
             -bthread_concurrency=18 -raft_max_segment_size=8388608 \
             -raft_max_install_snapshot_tasks_num=1 -raft_sync=true  \
             -conf=${confPath} \

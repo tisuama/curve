@@ -16,6 +16,6 @@
 #
 
 disk_list:
-  - sda
-  - sdb
-  - sdc
+  - sda2
+  - sda3
+  - sda4

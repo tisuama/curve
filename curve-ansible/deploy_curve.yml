@@ -32,7 +32,7 @@
     - name: check kernel version
       assert:
         that:
-          - ansible_kernel|version_compare('3.15', '>=')
+          - ansible_kernel|version_compare('3.10', '>=')
 
 - name: prepare software environment on all machines
   hosts: all

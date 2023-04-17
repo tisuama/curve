@@ -20,10 +20,10 @@ tmp_dir: /tmp/curve-ansible-tmp-files
 curve_bin_dir: /usr/bin
 curve_include_dir: /usr/include
 curvefs_dir: /usr/curvefs
-local_mds_package_path: ../curve-mds
+local_mds_package_path: /root/curve/projects/mds
 mds_remote_tmp_dir: /tmp/mds
 mds_log_dir: /data/log/curve/mds
-local_chunkserver_package_path: ../curve-chunkserver
+local_chunkserver_package_path: /root/curve/projects/chunkserver
 local_curve_sdk_package_path: ../curve-sdk
 local_nebd_package_path: ../../nebd-package
 local_nbd_package_path: ../../nbd-package
@@ -36,7 +36,7 @@ curve_service_path: /etc/systemd/system
 local_snapshotcloneserver_nginx_package_path: ../curve-nginx
 snapshotcloneserver_nginx_dir: /etc/curve/nginx
 
-local_tool_package_path: ../curve-tools
+local_tool_package_path: /root/curve/projects/tools
 
 
 etcd_download_url: https://github.com/etcd-io/etcd/releases/download
