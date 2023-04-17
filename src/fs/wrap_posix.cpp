@@ -23,6 +23,7 @@
 #include <glog/logging.h>
 #include <stdio.h>
 #include <sys/syscall.h>
+#include <fcntl.h>
 
 #include "src/fs/wrap_posix.h"
 
@@ -114,7 +115,11 @@ int PosixWrapper::fallocate(int fd, int mode, off_t offset, off_t len) {
      *   SMB3 (since Linux 3.17)
      *   Btrfs (since Linux 4.16)
      */
-    return ::syscall(SYS_fallocate, fd, mode, offset, len);
+    // return ::syscall(SYS_truncate, fd, mode, offset, len);
+	if (mode == 0) {
+		return posix_fallocate(fd, offset, len);
+	}
+	return 0;
 }
 
 int PosixWrapper::fsync(int fd) {
