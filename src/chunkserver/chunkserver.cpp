@@ -77,6 +77,7 @@ DEFINE_string(walFilePoolMetaPath, "./walfilepool.meta",
                                     "WAL filepool meta path");
 
 const char* kProtocalCurve = "curve";
+DECLARE_int32(v);
 
 namespace curve {
 namespace chunkserver {
@@ -97,6 +98,7 @@ int ChunkServer::Run(int argc, char** argv) {
         << conf.GetConfigPath();
     // 命令行可以覆盖配置文件中的参数
     LoadConfigFromCmdline(&conf);
+	LOG_IF(FATAL, !conf.GetIntValue("global.v", &FLAGS_v));
 
     // 初始化日志模块
     google::InitGoogleLogging(argv[0]);

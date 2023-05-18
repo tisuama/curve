@@ -16,19 +16,19 @@
 #  limitations under the License.
 #
 
-bin=bazel-bin
+bin=/root/curve/bazel-bin/test/chunkserver
 #bin=.
 raftconf="127.0.0.1:8200:0,127.0.0.1:8201:0,127.0.0.1:8202:0"
-io_count=10
-io_time=5
-io_mode=async
-iodepth=4
+io_count=3
+io_time=1
+io_mode=sync
+iodepth=1
 request_size=4096
 io_pattern=randwrite
 #request_size=4194304
 #io_pattern=write
 wait_mode=efficiency
-thread_num=2
+thread_num=1
 verbose=-verbose
 #verbose=
 

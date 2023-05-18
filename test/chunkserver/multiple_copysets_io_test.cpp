@@ -147,8 +147,8 @@ int64_t nr_copysets = 0;
 int64_t chunks_per_copyset = 0;
 ThreadInfo thread_infos[8] = {0};
 
-LogicPoolID poolId = 10000;
-CopysetID copysetIdBase = 100;
+LogicPoolID poolId = 1;
+CopysetID copysetIdBase = 1;
 
 braft::Configuration conf;
 std::vector<braft::PeerId> peers;
@@ -464,6 +464,7 @@ int prepare_io_context(IoContext *ioCxt) {
     req->set_logicpoolid(copyset->poolId);
     req->set_copysetid(copyset->copysetId);
     req->set_chunkid(offset / chunk_size);
+	req->set_sn(1);
 
     return 0;
 }
